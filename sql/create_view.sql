@@ -76,8 +76,6 @@ WHERE
 
     -- All 50 items must be within valid scale range (1-5).
     -- Catches zeros, nulls, and out-of-range entries.
-    -- NOTE: LEAST()/GREATEST() would be cleaner but require SQL Server 2022+.
-    --       Using explicit BETWEEN for SQL Server 2019 compatibility.
     EXT1 BETWEEN 1 AND 5 AND EXT2 BETWEEN 1 AND 5 AND EXT3 BETWEEN 1 AND 5
     AND EXT4 BETWEEN 1 AND 5 AND EXT5 BETWEEN 1 AND 5 AND EXT6 BETWEEN 1 AND 5
     AND EXT7 BETWEEN 1 AND 5 AND EXT8 BETWEEN 1 AND 5 AND EXT9 BETWEEN 1 AND 5
