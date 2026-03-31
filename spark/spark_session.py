@@ -2,7 +2,6 @@ from pyspark.sql import SparkSession
 import os
 import logging
 
-
 logger = logging.getLogger(__name__)
 
 

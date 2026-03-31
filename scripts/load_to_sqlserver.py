@@ -16,9 +16,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
-)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -36,7 +34,7 @@ def load_local_env(env_path: Path):
         key, value = line.split("=", 1)
         key = key.strip()
         value = value.strip()
-        if value and value[0] in {"\"", "'"} and value[-1] == value[0]:
+        if value and value[0] in {'"', "'"} and value[-1] == value[0]:
             value = value[1:-1]
         else:
             # Strip inline comments like: KEY=value  # comment
@@ -73,9 +71,7 @@ def build_db_url():
 
 
 def parse_args():
-    p = argparse.ArgumentParser(
-        description="Load CSV into SQL Server (pandas.to_sql)."
-    )
+    p = argparse.ArgumentParser(description="Load CSV into SQL Server (pandas.to_sql).")
     p.add_argument(
         "--source", "-s", default="data/raw/data-final.csv", help="Path to CSV file"
     )
