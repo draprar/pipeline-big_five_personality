@@ -7,7 +7,9 @@ logger = logging.getLogger(__name__)
 
 
 def get_spark_session(
-    jdbc_jar: str = None, app_name: str = None, driver_memory: str = None
+    jdbc_jar: str = None,
+    app_name: str = None,
+    driver_memory: str = None,
 ):
     """
     Create a SparkSession. Parameters default to environment variables or safe fallbacks.

@@ -16,7 +16,9 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s"
+)
 logger = logging.getLogger(__name__)
 
 
@@ -71,7 +73,9 @@ def build_db_url():
 
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Load CSV into SQL Server (pandas.to_sql).")
+    p = argparse.ArgumentParser(
+        description="Load CSV into SQL Server (pandas.to_sql)."
+    )
     p.add_argument(
         "--source", "-s", default="data/raw/data-final.csv", help="Path to CSV file"
     )
